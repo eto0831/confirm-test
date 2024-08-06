@@ -1,0 +1,56 @@
+.header {
+    background: #ffffff;
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+    position: relative;
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo {
+    color: #8b7969;
+    text-decoration: none;
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
+}
+
+.header-utilities nav {
+    width: 18%;
+    align-items: center;
+    position: absolute;
+    right: 0;
+}
+
+.header-nav {
+}
+
+.header-nav__button {
+    border: none;
+    background: transparent;
+    color: #d9c6b5;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.header-nav__link {
+    border: none;
+    background: transparent;
+    color: #d9c6b5;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+* {
+    border: 1px solid red;
+}

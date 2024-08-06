@@ -52,6 +52,7 @@ h2{
     border: 1px solid #ddd;
     background: #F4F4F4;
     appearance: none;
+    font-size: 14px;
 }
 
 .form__button {

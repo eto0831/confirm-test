@@ -18,21 +18,29 @@
     <header class="header">
         <div class="header__inner">
             <div class="header-utilities">
-                <a class="header__logo" href="/">
-                    FashionablyLate
-                </a>
+                <a href="/" class="header__logo">FashionablyLate</a>
                 <nav>
                     <ul class="header-nav">
                         @if (Auth::check())
                         <li class="header-nav__item">
-                            <form class="form" action="/logout" method="post">
+                            <form class="nav-form" action="/logout" method="post">
                                 @csrf
                                 <button class="header-nav__button">logout</button>
                             </form>
                         </li>
+                        @elseif(\Request::is('register'))
+                        <li class="header-nav__item">
+                            <form class="nav-form" action="/login" method="post">
+                                @csrf
+                                <a class="header-nav__button" href="/login">login</a>
+                            </form>
+                        </li>
                         @else
                         <li class="header-nav__item">
-                            <a class="header-nav__link" href="/register">register</a>
+                            <form class="nav-form" action="/register" method="post">
+                                @csrf
+                                <a class="header-nav__button" href="/register">register</a>
+                            </form>
                         </li>
                         @endif
                     </ul>
@@ -40,6 +48,8 @@
             </div>
         </div>
     </header>
+
+
 
     <main>
         @yield('content')

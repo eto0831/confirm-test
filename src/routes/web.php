@@ -19,4 +19,6 @@ use App\Http\Controllers\CategoryController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/',[ContactController::class, 'index']);
+    Route::get('/admin',[ContactController::class,'admin']);
+    
 });

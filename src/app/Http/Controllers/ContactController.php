@@ -11,4 +11,13 @@ class ContactController extends Controller
     public function index(){
         return view('index');
     }
+
+    public function admin(){
+        $contacts = Contact::with('category')->paginate(7);
+        $categories = Category::all();
+
+        return view('admin', compact('contacts', 'categories'));
+    }
+
+
 }

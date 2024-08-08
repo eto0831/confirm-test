@@ -1,0 +1,50 @@
+.contact__heading {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.contact-parts{
+    display: flex;
+    justify-content: space-between;
+}
+svg.w-5.h-5 {
+    /*paginateメソッドの矢印の大きさ調整のために追加*/
+    width: 30px;
+    height: 30px;
+}
+
+.contact-table {
+    margin: 30px auto;
+    width: 70%;
+    text-align: left;
+
+}
+
+.contact-table__inner {
+    width: 100%;
+
+}
+
+.contact-table__row {
+    border-bottom: 1px solid #ddd;
+
+}
+
+.contact-table__header {
+    padding: 12px;
+    width: 20%;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contact-table__header-span {
+    margin-right: 10px;
+}
+
+.contact-table__item:first-of-type {
+    padding: 12px;
+    width: 90%;
+}
+
+* {
+    border: 1px solid red;
+}

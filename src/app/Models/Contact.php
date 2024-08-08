@@ -22,6 +22,12 @@ class Contact extends Model
     ];
 
     public function category(){
-        return $this->belongsTo(category::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function getGenderAttribute($value)
+    {
+        $genderMap = [1 => '男性', 2 => '女性', 3 => 'その他'];
+        return $genderMap[$value] ?? '-'; // null の場合は '-' を返す
     }
 }

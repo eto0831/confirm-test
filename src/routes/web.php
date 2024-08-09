@@ -19,6 +19,8 @@ use App\Http\Controllers\CategoryController;
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/',[ContactController::class, 'index']);
+    Route::post('/confirm', [ContactController::class, 'confirm']);
+    Route::post('/contacts', [ContactController::class, 'store']);
     Route::get('/admin',[ContactController::class,'admin']);
     Route::match(['get', 'post'], '/admin/search', [ContactController::class, 'search']);
 });

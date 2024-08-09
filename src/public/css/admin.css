@@ -23,12 +23,14 @@
   border: 1px solid #ccc;
 }
 
-.search-form button {
+.search-form button,
+.search-form__reset-button a{
   padding: 8px 15px;
   background-color: #4CAF50; /* 緑 */
   color: white;
   border: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* エクスポートボタンとページネーション */

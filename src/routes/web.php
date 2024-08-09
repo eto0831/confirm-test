@@ -20,5 +20,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
     Route::get('/',[ContactController::class, 'index']);
     Route::get('/admin',[ContactController::class,'admin']);
-    
+    Route::get('/admin/search', [ContactController::class, 'search']);
 });

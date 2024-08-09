@@ -1,60 +1,84 @@
+/* 全体的なスタイル */
+.contact__content {
+  width: 80%; /* 必要に応じて調整 */
+  margin: 20px auto;
+}
+
 .contact__heading {
-    margin-bottom: 20px;
-    text-align: center;
-}
-.contact-parts{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.export__button{
-    align-items: center;
-}
-.export__button-submit{
-    display: inline-block;
-}
-.contact__link{
-    align-items: center;
+/* 検索エリア */
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
+.contact-search input, .contact-search select {
+  margin-right: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+}
+
+.search-form button {
+  padding: 8px 15px;
+  background-color: #4CAF50; /* 緑 */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* エクスポートボタンとページネーション */
+.contact-parts {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.export__button-submit {
+  background-color: #008CBA; /* 青 */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+/* テーブル */
 .contact-table {
-    margin: 30px auto;
-    width: 70%;
-    text-align: left;
-    
-
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
 }
 
 .contact-table__inner {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #000;
-    
-
+  width: 100%;
+  table-layout: fixed;
+  padding: 0 20px;
 }
 
-.contact-table__row {
-    border-bottom: 1px solid #ddd;
-
+.contact-table__header, .contact-table__item {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 .contact-table__header {
-    padding: 12px;
-    width: 20%;
-    text-align: left;
-    font-weight: bold;
+  background-color: #f2f2f2;
 }
 
-.contact-table__header-span {
-    margin-right: 10px;
+.contact-table__detail-button {
+  background-color: #008CBA;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
 }
 
-.contact-table__item:first-of-type {
-    padding: 12px;
-    width: 90%;
-}
+
 
 /* * {
     border: 1px solid red;

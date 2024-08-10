@@ -25,4 +25,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin',[ContactController::class,'admin']);
     Route::match(['get', 'post'], '/admin/search', [ContactController::class, 'search']);
     Route::get('/csv-download', [CsvDownloadController::class, 'downloadCsv']);
+    Route::delete('/admin/delete', [ContactController::class, 'destroy']);
 });

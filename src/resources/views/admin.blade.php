@@ -14,7 +14,8 @@
     <form class="search-form" action="/admin/search" method="get">
         @csrf
         <div class="contact-search">
-            <input type="text" class="search-form__item-input" placeholder="名前やメールアドレスを入力してください" name="keyword" value="{{ old('keyword') }}">
+            <input type="text" class="search-form__item-input" placeholder="名前やメールアドレスを入力してください" name="keyword"
+                value="{{ old('keyword') }}">
         </div>
         <div class="contact-search">
             <select class="search-form__item-select" name="gender">
@@ -48,7 +49,7 @@
         <form class="export__button" action="/csv-download" method="get">
             @csrf
             @foreach (request()->query() as $key => $value)
-                <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+            <input type="hidden" name="{{ $key }}" value="{{ $value }}">
             @endforeach
             <button class="export__button-submit" type="submit">エクスポート</button>
         </form>
@@ -72,12 +73,37 @@
             <table-body>
                 @foreach ($contacts as $contact)
                 <tr class="contact-table__row">
-                    <td class="contact-table__item"><span>{{ $contact['last_name'] }} {{ $contact['first_name'] }}</span></td>
+                    <td class="contact-table__item"><span>{{ $contact['last_name'] }} {{ $contact['first_name']
+                            }}</span></td>
                     <td class="contact-table__item"><span>{{ $contact->gender }}</span></td>
                     <td class="contact-table__item"><span>{{ $contact['email'] }}</span></td>
                     <td class="contact-table__item"><span>{{ $contact->category->content }}</span></td>
                     <td class="contact-table__item">
-                        <button class="contact-table__detail-button">詳細</button>
+                        <div class="main">
+                            <button class="open-button" popovertarget="my-popover-{{ $contact->id }}"
+                                popovertargetaction="show"> 詳細 </button>
+                            <div id="my-popover-{{ $contact->id }}" popover class="modal-content">
+                                <div class="modal-body">
+                                    <p>
+                                        姓: {{ $contact['last_name'] }} <br>
+                                        名: {{ $contact['first_name'] }} <br>
+                                        性別: {{ $contact->gender }} <br>
+                                        Email: {{ $contact['email'] }} <br>
+                                        電話番号: {{ $contact['phone_number'] }} <br>
+                                        住所: {{ $contact['address'] }} <br>
+                                        建物名: {{ $contact['building_name'] }} <br>
+                                        カテゴリー: {{ $contact->category->content }} <br>
+                                        詳細: {{ $contact['detail'] }} <br>
+                                    </p>
+                                    <form action="/admin/delete" method="POST">
+                                        <input type="hidden" name="id" value="{{ $contact['id'] }}">
+                                        <button class="delete-form__button-submit" type="submit">削除</button>
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
                 @endforeach

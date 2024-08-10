@@ -84,17 +84,43 @@
                                 popovertargetaction="show"> 詳細 </button>
                             <div id="my-popover-{{ $contact->id }}" popover class="modal-content">
                                 <div class="modal-body">
-                                    <p>
-                                        姓: {{ $contact['last_name'] }} <br>
-                                        名: {{ $contact['first_name'] }} <br>
-                                        性別: {{ $contact->gender }} <br>
-                                        Email: {{ $contact['email'] }} <br>
-                                        電話番号: {{ $contact['phone_number'] }} <br>
-                                        住所: {{ $contact['address'] }} <br>
-                                        建物名: {{ $contact['building_name'] }} <br>
-                                        カテゴリー: {{ $contact->category->content }} <br>
-                                        詳細: {{ $contact['detail'] }} <br>
-                                    </p>
+                                    <button popovertarget="my-popover-{{ $contact->id }}" popovertargetaction="hide">
+                                        ×
+                                    </button>
+                                    <table>
+                                        <tr>
+                                            <td>お名前</td>
+                                            <td>{{ $contact['last_name'] }} {{ $contact['first_name'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>性別</td>
+                                            <td>{{ $contact->gender }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Email</td>
+                                            <td>{{ $contact['email'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>電話番号</td>
+                                            <td>{{ $contact['tell'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>住所</td>
+                                            <td>{{ $contact['address'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>建物名</td>
+                                            <td>{{ $contact['building_name'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>お問い合わせの種類</td>
+                                            <td>{{ $contact->category->content }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>お問い合わせ内容</td>
+                                            <td>{{ $contact['detail'] }}</td>
+                                        </tr>
+                                    </table>
                                     <form action="/admin/delete" method="POST">
                                         <input type="hidden" name="id" value="{{ $contact['id'] }}">
                                         <button class="delete-form__button-submit" type="submit">削除</button>
@@ -102,6 +128,8 @@
                                         @method('DELETE')
                                     </form>
                                 </div>
+                                <div class="modal-overlay"></div>
+                                <div class="modal-overlay"></div>
                             </div>
                         </div>
                     </td>

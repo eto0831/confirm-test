@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CsvDownloadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,4 +24,5 @@ Route::middleware('auth')->group(function () {
     Route::post('/contacts', [ContactController::class, 'store']);
     Route::get('/admin',[ContactController::class,'admin']);
     Route::match(['get', 'post'], '/admin/search', [ContactController::class, 'search']);
+    Route::get('/csv-download', [CsvDownloadController::class, 'downloadCsv']);
 });

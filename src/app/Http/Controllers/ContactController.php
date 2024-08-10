@@ -42,5 +42,4 @@ class ContactController extends Controller
         return view('admin', compact('contacts', 'categories'));
     }
 
-
 }

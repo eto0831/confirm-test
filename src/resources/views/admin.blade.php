@@ -11,7 +11,7 @@
     <div class="contact__heading">
         <h2>Admin</h2>
     </div>
-    <form class="search-form" action="/admin/search" method="post">
+    <form class="search-form" action="/admin/search" method="get">
         @csrf
         <div class="contact-search">
             <input type="text" class="search-form__item-input" placeholder="名前やメールアドレスを入力してください" name="keyword" value="{{ old('keyword') }}">
@@ -45,9 +45,13 @@
 
     {{-- エクスポートボタンとページネーション --}}
     <div class="contact-parts">
-        <div class="export__button">
-            <button class="export__button-submit">エクスポート</button>
-        </div>
+        <form class="export__button" action="/csv-download" method="get">
+            @csrf
+            @foreach (request()->query() as $key => $value)
+                <input type="hidden" name="{{ $key }}" value="{{ $value }}">
+            @endforeach
+            <button class="export__button-submit" type="submit">エクスポート</button>
+        </form>
         <div class="contact__link">
             {{ $contacts->links() }}
         </div>

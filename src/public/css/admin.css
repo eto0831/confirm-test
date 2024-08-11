@@ -98,7 +98,7 @@
 
 *:popover-open {
   position: relative;
-  padding: 1rem;
+  padding: 10px 50px;
   border: 1px solid #8B7969;
   text-align: left;
   min-width: 300px;
@@ -151,6 +151,28 @@ button {
   width: 30%;
 }
 
+.upper{
+  display: flex;
+  justify-content: end;
+}
+.upper button{
+  font-size: 50px;
+  color: #8B7969;
+  }
+
+.lower{
+  display: flex;
+  justify-content: center;
+}
+
+.lower button{
+  font-size: 16px;
+  color: white;
+  background: red;
+  padding: 6px 25px;
+  margin: 30px auto;
+  font-family: "Inika", serif;
+}
 
 /* * {
     border: 1px solid red;

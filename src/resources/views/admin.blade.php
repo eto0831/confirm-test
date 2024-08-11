@@ -84,9 +84,11 @@
                                 popovertargetaction="show"> 詳細 </button>
                             <div id="my-popover-{{ $contact->id }}" popover class="modal-content">
                                 <div class="modal-body">
+                                    <div class="upper">
                                     <button popovertarget="my-popover-{{ $contact->id }}" popovertargetaction="hide">
                                         ×
                                     </button>
+                                    </div>
                                     <table>
                                         <tr>
                                             <th>お名前</th>
@@ -123,7 +125,9 @@
                                     </table>
                                     <form action="/admin/delete" method="POST">
                                         <input type="hidden" name="id" value="{{ $contact['id'] }}">
+                                        <div class="lower">
                                         <button class="delete-form__button-submit" type="submit">削除</button>
+                                        </div>
                                         @csrf
                                         @method('DELETE')
                                     </form>

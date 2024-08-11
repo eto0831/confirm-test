@@ -95,13 +95,21 @@
         </div>
         <div class="form__group-content">
           <div class="form__input--text">
-            <input type="tel" name="tell" placeholder="09012345678" value="{{ old('tell') }}" />
+            <input type="tel" name="tell_1" placeholder="090" value="{{ old('tell_1') }}" /> -
+            <input type="tel" name="tell_2" placeholder="1234" value="{{ old('tell_2') }}" /> -
+            <input type="tel" name="tell_3" placeholder="5678" value="{{ old('tell_3') }}" />
           </div>
           <div class="form__error">
-            @error('tel')
-              {{ $message }}
+            @error('tell_1')
+                <span>{{ $message }}</span>
             @enderror
-          </div>
+            @error('tell_2')
+                <span>{{ $message }}</span>
+            @enderror
+            @error('tell_3')
+                <span>{{ $message }}</span>
+            @enderror
+        </div>
         </div>
       </div>
       <div class="form__group">

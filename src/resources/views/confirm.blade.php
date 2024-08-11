@@ -14,15 +14,12 @@
     <div class="confirm-table">
       <table class="confirm-table__inner">
         <tr class="confirm-table__row">
-          <th class="confirm-table__header">お名前1</th>
+          <th class="confirm-table__header">お名前</th>
           <td class="confirm-table__text">
-            <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly />
-          </td>
-        </tr>
-        <tr class="confirm-table__row">
-          <th class="confirm-table__header">お名前2</th>
-          <td class="confirm-table__text">
-            <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly />
+            <div class="confirm-table__text-wrapper">
+              <input type="text" name="last_name" value="{{ $contact['last_name'] }}" readonly />
+              <input type="text" name="first_name" value="{{ $contact['first_name'] }}" readonly />
+            </div>
           </td>
         </tr>
         <tr class="confirm-table__row">
@@ -74,6 +71,9 @@
     </div>
     <div class="form__button">
       <button class="form__button-submit" type="submit">送信</button>
+    </div>
+    <div class="change_link">
+      <a href="/" onclick="event.preventDefault(); history.back();">修正</a>
     </div>
   </form>
 </div>

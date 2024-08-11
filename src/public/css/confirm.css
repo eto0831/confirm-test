@@ -24,21 +24,37 @@
   
   .confirm-table__header {
     padding: 15px;
-    width: 20%;
+    width: 40%;
     border-bottom: 1px solid #ddd;
-    background-color: #eee;
+    background-color: #BAA899;
     font-weight: bold;
+    color: white;
+    font-family: inika;
   }
   
   .confirm-table__text {
     padding: 15px;
     border-bottom: 1px solid #ddd;
+    
   }
   
   .confirm-table__text input {
     width: 100%;
     outline: none;
     border: none;
+    color: #8B7969;
+    font-family: inika;
+    font-size: 16px;
+  }
+
+  .confirm-table__text-wrapper{
+    display: flex;
+    justify-content:space-between;
+    text-align: left;
+  }
+
+  .confirm-table__text-name{
+    display: inline-block;
   }
   
   .confirm-table__row:last-child .confirm-table__header,
@@ -57,7 +73,11 @@
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
+    background: #8B7969;
     color: #fff;
     cursor: pointer;
+  }
+
+  .change_link{
+    display: inline-block;
   }

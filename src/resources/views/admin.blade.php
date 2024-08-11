@@ -89,35 +89,35 @@
                                     </button>
                                     <table>
                                         <tr>
-                                            <td>お名前</td>
+                                            <th>お名前</th>
                                             <td>{{ $contact['last_name'] }} {{ $contact['first_name'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td>性別</td>
+                                            <th>性別</th>
                                             <td>{{ $contact->gender }}</td>
                                         </tr>
                                         <tr>
-                                            <td>Email</td>
+                                            <th>Email</th>
                                             <td>{{ $contact['email'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td>電話番号</td>
+                                            <th>電話番号</th>
                                             <td>{{ $contact['tell'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td>住所</td>
+                                            <th>住所</th>
                                             <td>{{ $contact['address'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td>建物名</td>
+                                            <th>建物名</th>
                                             <td>{{ $contact['building_name'] }}</td>
                                         </tr>
                                         <tr>
-                                            <td>お問い合わせの種類</td>
+                                            <th>お問い合わせの種類</th>
                                             <td>{{ $contact->category->content }}</td>
                                         </tr>
                                         <tr>
-                                            <td>お問い合わせ内容</td>
+                                            <th>お問い合わせ内容</th>
                                             <td>{{ $contact['detail'] }}</td>
                                         </tr>
                                     </table>

@@ -20,13 +20,15 @@
 .contact-search input, .contact-search select {
   margin-right: 10px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid #E3DED9;
+  background: #F4F4F4;
+  color: #8B7969;
 }
 
 .search-form button,
 .search-form__reset-button a{
   padding: 8px 15px;
-  background-color: #4CAF50; /* 緑 */
+  background-color: #8B7969; /* 緑 */
   color: white;
   border: none;
   cursor: pointer;
@@ -42,8 +44,8 @@
 }
 
 .export__button-submit {
-  background-color: #008CBA; /* 青 */
-  color: white;
+  background-color: #E1DBD699; /* 青 */
+  color: #8B7969;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
@@ -59,8 +61,9 @@
 .contact-table__inner {
   width: 100%;
   table-layout: fixed;
-  padding: 0 20px;
+  padding: 0 auto;
 }
+
 
 .contact-table__header, .contact-table__item {
   padding: 12px;
@@ -69,23 +72,38 @@
 }
 
 .contact-table__header {
-  background-color: #f2f2f2;
+  background-color: #8B7969;
+  color: white;
+  font-size: 20px;
+  font-family: "Inika", serif;
+}
+
+.contact-table__item {
+  color: #8B7969;
+  font-size: 20px;
+  font-family: "Inika", serif;
 }
 
 .contact-table__detail-button {
-  background-color: #008CBA;
+  background-color: #E1DBD699;
   color: white;
   padding: 8px 12px;
   border: none;
   cursor: pointer;
 }
 
+.contact-table__item:last-child {
+  text-align: right;
+}
+
 *:popover-open {
   position: relative;
   padding: 1rem;
-  border: 1px solid #ccc;
-  text-align: center;
+  border: 1px solid #8B7969;
+  text-align: left;
   min-width: 300px;
+  width: 80%;
+  color: #8B7969;
 }
 *::backdrop {
   background-color: rgba(0, 0, 0, 0.3);
@@ -102,7 +120,9 @@ button {
 }
 .open-button {
   padding: 0.5rem 1rem;
-  border: solid red 1px;
+  border: solid #D9C6B599 1px;
+  color: #D9C6B5;
+  background: #F4F4F44D;
 }
 
 .close-button {
@@ -127,6 +147,10 @@ button {
   display: block; /* モーダルウィンドウが開いているときは表示 */
 }
 
+#my-popover-{{ $contact->id }} table th {
+  width: 30%;
+}
+
 
 /* * {
     border: 1px solid red;
@@ -146,7 +170,8 @@ button {
     padding: 0.5rem 0.75rem;
     margin-left: -1px;
     line-height: 1.25;
-    color: #007bff;
+    color: #8B7969;
+    text-decoration: none;
     background-color: #fff;
     border: 1px solid #dee2e6;
   }
@@ -179,12 +204,12 @@ button {
   .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #007bff;
-    border-color: #007bff;
+    background-color: #8B7969;
+    border-color: #8B7969;
   }
   
   .page-item.disabled .page-link {
-    color: #6c757d;
+    color: #8B7969;
     pointer-events: none;
     cursor: auto;
     background-color: #fff;

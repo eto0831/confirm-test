@@ -69,11 +69,13 @@
         </tr>
       </table>
     </div>
-    <div class="form__button">
-      <button class="form__button-submit" type="submit">送信</button>
-    </div>
-    <div class="change_link">
-      <a href="/" onclick="event.preventDefault(); history.back();">修正</a>
+    <div class="form__button-wrapper">
+      <div class="form__button">
+        <button class="form__button-submit" type="submit">送信</button>
+      </div>
+      <div class="change_link">
+        <a href="/" onclick="event.preventDefault(); history.back();">修正</a>
+      </div>
     </div>
   </form>
 </div>

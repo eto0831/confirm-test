@@ -29,7 +29,8 @@
     background-color: #BAA899;
     font-weight: bold;
     color: white;
-    font-family: inika;
+    font-family: "Inika", serif;
+    font-size: 20px;
   }
   
   .confirm-table__text {
@@ -68,16 +69,31 @@
   }
   
   .form__button-submit {
-    padding: 10px;
-    width: 30%;
+    padding: 0px 30px;
+    width: 200px;
     height: 50px;
     border: none;
-    border-radius: 3px;
     background: #8B7969;
     color: #fff;
     cursor: pointer;
+    font-family: "Inika", serif;
+    font-size: 20px;
   }
 
-  .change_link{
+  .change_link a{
     display: inline-block;
+    color: #8B7969;
+    font-family: "Inika", serif;
+    font-size: 20px;
+    position: absolute;
+    right: 25%;
+    translate: 0 0;
+
+  }
+
+  .form__button-wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
   }
